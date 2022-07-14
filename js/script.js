@@ -57,52 +57,337 @@ const boolzapp = new Vue({
       {
         name: "Michele",
         avatar: "_1",
+        contactMessageList: [
+          {
+            text: "ciao",
+            whoIs: 1,
+          },
+          {
+            text: "ciao",
+            whoIs: 0,
+          },
+          {
+            text: "ciao",
+            whoIs: 1,
+          },
+          {
+            text: "ciao",
+            whoIs: 0,
+          },
+          {
+            text: "ciao",
+            whoIs: 1,
+          },
+        ],
       },
       {
         name: "Fabio",
         avatar: "_2",
+        contactMessageList: [
+          {
+            text: "ciao",
+            whoIs: 1,
+          },
+          {
+            text: "ciao",
+            whoIs: 0,
+          },
+          {
+            text: "ciao",
+            whoIs: 1,
+          },
+          {
+            text: "ciao",
+            whoIs: 0,
+          },
+          {
+            text: "ciao",
+            whoIs: 1,
+          },
+        ],
       },
       {
         name: "Samuele",
         avatar: "_3",
+        contactMessageList: [
+          {
+            text: "ciao",
+            whoIs: 1,
+          },
+          {
+            text: "ciao",
+            whoIs: 0,
+          },
+          {
+            text: "ciao",
+            whoIs: 1,
+          },
+          {
+            text: "ciao",
+            whoIs: 0,
+          },
+          {
+            text: "ciao",
+            whoIs: 1,
+          },
+        ],
       },
       {
         name: "Luisa",
         avatar: "_4",
+        contactMessageList: [
+          {
+            text: "ciao",
+            whoIs: 1,
+          },
+          {
+            text: "ciao",
+            whoIs: 0,
+          },
+          {
+            text: "ciao",
+            whoIs: 1,
+          },
+          {
+            text: "ciao",
+            whoIs: 0,
+          },
+          {
+            text: "ciao",
+            whoIs: 1,
+          },
+        ],
       },
       {
         name: "Luisa",
         avatar: "_5",
+        contactMessageList: [
+          {
+            text: "ciao",
+            whoIs: 1,
+          },
+          {
+            text: "ciao",
+            whoIs: 0,
+          },
+          {
+            text: "ciao",
+            whoIs: 1,
+          },
+          {
+            text: "ciao",
+            whoIs: 0,
+          },
+          {
+            text: "ciao",
+            whoIs: 1,
+          },
+        ],
       },
       {
         name: "Orazio",
         avatar: "_6",
+        contactMessageList: [
+          {
+            text: "ciao",
+            whoIs: 1,
+          },
+          {
+            text: "ciao",
+            whoIs: 0,
+          },
+          {
+            text: "ciao",
+            whoIs: 1,
+          },
+          {
+            text: "ciao",
+            whoIs: 0,
+          },
+          {
+            text: "ciao",
+            whoIs: 1,
+          },
+        ],
       },
       {
         name: "Orlando",
         avatar: "_7",
+        contactMessageList: [
+          {
+            text: "ciao",
+            whoIs: 1,
+          },
+          {
+            text: "ciao",
+            whoIs: 0,
+          },
+          {
+            text: "ciao",
+            whoIs: 1,
+          },
+          {
+            text: "ciao",
+            whoIs: 0,
+          },
+          {
+            text: "ciao",
+            whoIs: 1,
+          },
+        ],
       },
       {
         name: "Giuseppe",
         avatar: "_8",
+        contactMessageList: [
+          {
+            text: "ciao",
+            whoIs: 1,
+          },
+          {
+            text: "ciao",
+            whoIs: 0,
+          },
+          {
+            text: "ciao",
+            whoIs: 1,
+          },
+          {
+            text: "ciao",
+            whoIs: 0,
+          },
+          {
+            text: "ciao",
+            whoIs: 1,
+          },
+        ],
       },
       {
         name: "Pinocchio",
         avatar: "_1",
+        contactMessageList: [
+          {
+            text: "ciao",
+            whoIs: 1,
+          },
+          {
+            text: "ciao",
+            whoIs: 0,
+          },
+          {
+            text: "ciao",
+            whoIs: 1,
+          },
+          {
+            text: "ciao",
+            whoIs: 0,
+          },
+          {
+            text: "ciao",
+            whoIs: 1,
+          },
+        ],
       },
       {
         name: "Eren",
         avatar: "_2",
+        contactMessageList: [
+          {
+            text: "ciao",
+            whoIs: 1,
+          },
+          {
+            text: "cavallo pazzo rabiot",
+            whoIs: 0,
+          },
+          {
+            text: "cavallo pazzo rabiot",
+            whoIs: 0,
+          },
+          {
+            text: "cavallo pazzo rabiot",
+            whoIs: 0,
+          },
+          {
+            text: "cavallo pazzo rabiot",
+            whoIs: 0,
+          },
+          {
+            text: "cavallo pazzo rabiot",
+            whoIs: 0,
+          },
+          {
+            text: "cavallo pazzo rabiot",
+            whoIs: 0,
+          },
+          {
+            text: "cavallo pazzo rabiot",
+            whoIs: 0,
+          },
+          {
+            text: "cavallo pazzo rabiot",
+            whoIs: 0,
+          },
+          {
+            text: "cavallo pazzo rabiot",
+            whoIs: 0,
+          },
+          {
+            text: "ciao",
+            whoIs: 1,
+          },
+          {
+            text: "ciao",
+            whoIs: 0,
+          },
+          {
+            text: "ciao",
+            whoIs: 1,
+          },
+        ],
       },
       {
         name: "Mikasa",
         avatar: "_3",
+        contactMessageList: [
+          {
+            text: "ciao",
+            whoIs: 1,
+          },
+          {
+            text: "cavallo",
+            whoIs: 0,
+          },
+          {
+            text: "ciao",
+            whoIs: 1,
+          },
+          {
+            text: "ciao",
+            whoIs: 0,
+          },
+          {
+            text: "ciao",
+            whoIs: 1,
+          },
+        ],
       },
     ],
   },
   methods: {
     changeChat(index) {
       this.currentActiveIndex = index;
+    },
+  },
+  computed: {
+    rendAllMessage() {
+      const rendAllMessage = this.contacts[
+        this.currentActiveIndex
+      ].contactMessageList.map((message, i) => {
+        return message;
+      });
+
+      return rendAllMessage;
     },
   },
 });

@@ -154,7 +154,28 @@
                   ></a>
                 </div>
               </div>
-              <div id="message-area"></div>
+              <div id="message-area" class="px-2">
+                <div
+                  v-for="(message,index) in rendAllMessage"
+                  class="w-100 my-2"
+                >
+                  <div
+                    v-if="message.whoIs === 1"
+                    class="d-flex message-on-right"
+                  >
+                    <div class="message user-message">
+                      <p class="text-start m-0">{{message.text}}</p>
+                      <p class="text-end message-date m-0">date</p>
+                    </div>
+                  </div>
+                  <div v-else class="d-flex message-on-left">
+                    <div class="message contact-message">
+                      <p class="text-start m-0">{{message.text}}</p>
+                      <p class="text-end message-date m-0">date</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
               <div id="write-message">
                 <a href="#" class="d-block mx-3"
                   ><i class="fa-solid fa-face-grin"></i
@@ -176,3 +197,4 @@
     <script src="js/script.js"></script>
   </body>
 </html>
+<!-- :class="{'content-right' : currentIndex === index}" -->
