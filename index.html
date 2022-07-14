@@ -38,7 +38,7 @@
       <main>
         <div class="container h-100">
           <div class="row h-100">
-            <div class="col-4 h-100 my-border">
+            <div class="col-4 h-100 my-border p-0">
               <div>
                 <!-- Chat header  -->
                 <div
@@ -47,10 +47,14 @@
                 >
                   <!-- User and user image -->
                   <div class="d-flex align-items-center">
-                    <figure id="user-image" class="m-0">
-                      <img src="" alt="" />
+                    <figure id="user-image" class="m-0 me-2">
+                      <img
+                        src="img/avatar_1.jpg"
+                        class="rounded-circle"
+                        alt=""
+                      />
                     </figure>
-                    <h5 class="m-0">Nome utente</h5>
+                    <span class="h6 m-0">Nome profilo</span>
                   </div>
                   <div
                     id="set-icon-chat-header"
@@ -61,12 +65,41 @@
                     <i class="fa-solid fa-ellipsis-vertical me-2"></i>
                   </div>
                 </div>
-                <div></div>
-                <div></div>
+                <!-- Abile/Disable Desktop notify -->
+                <div
+                  id="ab-disable-desk-not"
+                  class="p-3 d-flex align-items-center"
+                >
+                  <figure
+                    id="alert-figure"
+                    class="m-0 rounded-circle d-flex align-items-center justify-content-center"
+                  >
+                    <i class="fa-solid fa-bell-slash fa-2x"></i>
+                  </figure>
+                  <div class="ms-2">
+                    <p class="m-0">Ricevi notifiche di nuovi messaggi</p>
+                    <a href="#">
+                      <p class="m-0">Attiva notifiche Desktop</p>
+                    </a>
+                  </div>
+                </div>
+                <!-- Navbar -->
+                <div>
+                  <nav class="d-flex align-items-stretch">
+                    <button class="border-0 p-2" id="chat-spotlight">
+                      <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                    <input
+                      type="text"
+                      class="p-2 form-control border-0"
+                      id="input-chat"
+                    />
+                  </nav>
+                </div>
                 <div></div>
               </div>
             </div>
-            <div class="col-8 h-100 my-border"></div>
+            <div class="col-8 h-100 p-0 my-border"></div>
           </div>
         </div>
       </main>

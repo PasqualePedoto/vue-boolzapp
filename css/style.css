@@ -50,13 +50,49 @@ main {
  CHAT HEADER
 ************** */
 
+#chat-header {
+  background-color: #eaeaea;
+}
+
 #chat-header figure {
-  width: 30px;
-  height: 30px;
+  width: 50px;
+  height: 50px;
 
   border-radius: 50%;
 }
 
 #chat-header figure img {
   object-fit: cover;
+}
+
+#ab-disable-desk-not {
+  background-color: #8edafd;
+  height: 100px;
+}
+
+#alert-figure {
+  background-color: white;
+
+  width: 60px;
+  height: 60px;
+
+  color: #8edafd;
+}
+
+/*
+- Ridimensioniamo il font-size nella gestione delle notifiche desktop
+- settimao il line-height altrimenti il tag p di BS fa di testa sua 
+*/
+
+#ab-disable-desk-not p {
+  font-size: 15px;
+  line-height: auto;
+}
+
+#chat-spotlight {
+  background-color: white;
+}
+
+#input-chat {
+  border-radius: 0;
 }
