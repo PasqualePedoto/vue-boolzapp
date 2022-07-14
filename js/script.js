@@ -49,6 +49,7 @@ const boolzapp = new Vue({
   el: "#root",
   data: {
     currentActiveIndex: 0,
+    newMessage: "",
     user: {
       name: "Pasquale",
       avatar: "_io",
@@ -378,15 +379,38 @@ const boolzapp = new Vue({
     changeChat(index) {
       this.currentActiveIndex = index;
     },
+    sendNewMessage() {
+      const message = {
+        text: this.newMessage,
+        whoIs: 1,
+      };
+      const currentChat =
+        this.contacts[this.currentActiveIndex].contactMessageList;
+      currentChat.push(message);
+
+      this.newMessage = "";
+    },
   },
   computed: {
     rendAllMessage() {
-      const rendAllMessage = this.contacts[
-        this.currentActiveIndex
-      ].contactMessageList.map((message, i) => {
+      const index = this.currentActiveIndex;
+      const currentChat = this.contacts[index].contactMessageList;
+      const lastMessage = currentChat[currentChat.length - 1].whoIs;
+
+      setTimeout(() => {
+        if (lastMessage) {
+          const contactMess = {
+            text: "ok",
+            whoIs: 0,
+          };
+          console.log("ci sono");
+          currentChat.push(contactMess);
+        }
+      }, 1000);
+
+      const rendAllMessage = currentChat.map((message, i) => {
         return message;
       });
-
       return rendAllMessage;
     },
   },

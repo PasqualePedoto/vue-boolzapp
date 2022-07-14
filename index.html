@@ -184,10 +184,26 @@
                   type="text"
                   class="form-control"
                   placeholder="Scrivi un messaggio"
+                  @keyup.enter="sendNewMessage"
+                  v-model="newMessage"
                 />
-                <a href="#" class="d-block mx-3"
-                  ><i class="fa-solid fa-microphone"></i
-                ></a>
+                <div>
+                  <button
+                    v-if="newMessage === ''"
+                    class="btn border-0"
+                    role="button"
+                  >
+                    <i class="fa-solid fa-microphone"></i>
+                  </button>
+                  <button
+                    v-else
+                    role="button"
+                    class="btn border-0"
+                    @click="sendNewMessage"
+                  >
+                    <i class="fa-solid fa-paper-plane"></i>
+                  </button>
+                </div>
               </div>
             </div>
           </div>
