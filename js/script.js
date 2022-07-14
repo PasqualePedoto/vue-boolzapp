@@ -48,6 +48,7 @@ const boolzapp = new Vue({
   name: "Boolzapp",
   el: "#root",
   data: {
+    currentActiveIndex: 0,
     user: {
       name: "Pasquale",
       avatar: "_io",

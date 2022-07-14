@@ -6,6 +6,10 @@ img {
   height: 100%;
 }
 
+a {
+  color: gray;
+}
+
 /* UTILS */
 
 .my-border {
@@ -42,8 +46,6 @@ body {
 main {
   height: 80vh;
   width: 70vw;
-
-  border: 1px solid black;
 }
 
 /* **************
@@ -59,7 +61,8 @@ main {
 */
 
 #chat-header figure,
-#contact-chats figure {
+#contact-chats figure,
+#contact-on-top figure {
   width: 50px;
   height: 50px;
 
@@ -97,8 +100,9 @@ figure img {
 - settimao il line-height altrimenti il tag p di BS fa di testa sua 
 */
 
-#ab-disable-desk-not p {
-  font-size: 15px;
+#ab-disable-desk-not p,
+#contact-on-top p {
+  font-size: 12px;
   line-height: auto;
 }
 
@@ -133,9 +137,48 @@ Definiamo la grafica del singolo contatto
   max-height: 80px;
 
   background-color: white;
+
+  cursor: pointer;
 }
 
 #contact-chats .contact-info {
   display: flex;
   flex-direction: column;
+
+  cursor: pointer;
+}
+
+/* 
+Barra de
+*/
+
+#contact-on-top {
+  max-height: 65px;
+  width: 100%;
+
+  background-color: #eaeaea;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+/*
+Chat area 
+*/
+
+#chat-area {
+  background-image: url("../img/mine.jpg");
+  background-position: center;
+  background-repeat: repeat;
+  background-size: contain;
+
+  height: 80vh;
+}
+
+/*
+Write message
+*/
+
+#write-message {
+  display: flex;
 }
