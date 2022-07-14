@@ -1,0 +1,37 @@
+/*
+- Definiamo il colore del body 
+- Diamo un altezza fissa che in questo caso, essendo una web app 
+  sarà pari alla Viewport
+*/
+
+body {
+  background-image: linear-gradient(to top, #d9dbd5 80%, #229688 20%);
+  height: 100vh;
+}
+
+/* 
+- Cambiamo il display in flex così da posizionare correttamente 
+  l'area dei contenuti
+*/
+
+#root {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/*
+-Vedo tutta la sezione di messaggistica come il main
+ aquesto punto dò height e width fissa  
+*/
+
+main {
+  height: 80vh;
+  width: 70vw;
+
+  border: 1px solid black;
+}
+
+.my-border {
+  border: 2px solid red;
+}
