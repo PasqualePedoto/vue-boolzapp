@@ -106,6 +106,7 @@
                   <div
                     v-for="(contact,index) in contacts"
                     class="chat-contact p-2"
+                    @click="changeChat(index)"
                   >
                     <figure class="m-0">
                       <img

@@ -100,4 +100,9 @@ const boolzapp = new Vue({
       },
     ],
   },
+  methods: {
+    changeChat(index) {
+      this.currentActiveIndex = index;
+    },
+  },
 });
