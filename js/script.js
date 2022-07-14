@@ -49,7 +49,7 @@ const boolzapp = new Vue({
   el: "#root",
   data: {
     user: {
-      name: "Nome Utente",
+      name: "Pasquale",
       avatar: "_io",
     },
     contacts: [
@@ -68,6 +68,34 @@ const boolzapp = new Vue({
       {
         name: "Luisa",
         avatar: "_4",
+      },
+      {
+        name: "Luisa",
+        avatar: "_5",
+      },
+      {
+        name: "Orazio",
+        avatar: "_6",
+      },
+      {
+        name: "Orlando",
+        avatar: "_7",
+      },
+      {
+        name: "Giuseppe",
+        avatar: "_8",
+      },
+      {
+        name: "Pinocchio",
+        avatar: "_1",
+      },
+      {
+        name: "Eren",
+        avatar: "_2",
+      },
+      {
+        name: "Mikasa",
+        avatar: "_3",
       },
     ],
   },

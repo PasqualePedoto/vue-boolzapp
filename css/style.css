@@ -54,21 +54,34 @@ main {
   background-color: #eaeaea;
 }
 
-#chat-header figure {
+/*
+- Ridimensioniamo il figure per l'image dell'user 
+*/
+
+#chat-header figure,
+#contact-chats figure {
   width: 50px;
   height: 50px;
 
   border-radius: 50%;
 }
 
-#chat-header figure img {
+figure img {
   object-fit: cover;
 }
+
+/*
+- Background delle notifiche 
+*/
 
 #ab-disable-desk-not {
   background-color: #8edafd;
   height: 100px;
 }
+
+/*
+- Serve esclusivamente ad effettuare il design della notifica 
+*/
 
 #alert-figure {
   background-color: white;
@@ -95,4 +108,34 @@ main {
 
 #input-chat {
   border-radius: 0;
+}
+
+/* 
+- Ricaviamo attraverso il calc l'altezza fissa in modo 
+  tale da permettere lo scroll laterale
+*/
+
+#contact-chats {
+  width: 100%;
+
+  height: calc(100% - 206px);
+  overflow-y: scroll;
+}
+
+/*
+Definiamo la grafica del singolo contatto 
+*/
+
+#contact-chats .chat-contact {
+  display: flex;
+  align-items: center;
+
+  max-height: 80px;
+
+  background-color: white;
+}
+
+#contact-chats .contact-info {
+  display: flex;
+  flex-direction: column;
 }

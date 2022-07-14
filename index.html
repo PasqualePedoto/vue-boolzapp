@@ -39,7 +39,7 @@
         <div class="container h-100">
           <div class="row h-100">
             <div class="col-4 h-100 my-border p-0">
-              <div>
+              <div class="h-100">
                 <!-- Chat header  -->
                 <div
                   id="chat-header"
@@ -49,12 +49,12 @@
                   <div class="d-flex align-items-center">
                     <figure id="user-image" class="m-0 me-2">
                       <img
-                        src="img/avatar_1.jpg"
+                        :src="'img/avatar' + user.avatar + '.jpg'"
                         class="rounded-circle"
-                        alt=""
+                        :alt="'img/avatar' + user.avatar"
                       />
                     </figure>
-                    <span class="h6 m-0">Nome profilo</span>
+                    <span class="h6 m-0">{{user.name}}</span>
                   </div>
                   <div
                     id="set-icon-chat-header"
@@ -96,7 +96,24 @@
                     />
                   </nav>
                 </div>
-                <div></div>
+                <!-- Contact chats -->
+                <div id="contact-chats">
+                  <div
+                    v-for="(contact,index) in contacts"
+                    class="chat-contact p-2"
+                  >
+                    <figure class="m-0">
+                      <img
+                        :src="'img/avatar' + contact.avatar + '.jpg'"
+                        :alt="'img/avatar' + contact.avatar"
+                        class="rounded-circle"
+                      />
+                    </figure>
+                    <div class="contact-info ms-2">
+                      <p>{{contact.name}}</p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
             <div class="col-8 h-100 p-0 my-border"></div>
