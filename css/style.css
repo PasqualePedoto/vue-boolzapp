@@ -46,6 +46,8 @@ body {
 main {
   height: 80vh;
   width: 70vw;
+
+  box-shadow: 1px 3px 3px #999;
 }
 
 /* **************
@@ -221,6 +223,8 @@ Design del messaggio generico
 
   min-width: 100px;
   max-width: 300px;
+
+  box-shadow: 1px 3px 3px #999;
 }
 
 /* User message */
