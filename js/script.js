@@ -47,10 +47,18 @@
 const boolzapp = new Vue({
   name: "Boolzapp",
   el: "#root",
+
+  // # Dati
   data: {
+    // Value dell'input di ricerca
     searchValue: "",
+
+    // L'index che governa il mondo
     currentActiveIndex: 0,
+
+    // Value dell'input nell'area messaggistica
     newMessage: "",
+
     user: {
       name: "Pasquale",
       avatar: "_io",
@@ -376,10 +384,15 @@ const boolzapp = new Vue({
       },
     ],
   },
+
+  // # Metodi
   methods: {
+    // $ Al click della chat nell'area contatti cambia la chat visualizzata
     changeChat(index) {
       this.currentActiveIndex = index;
     },
+
+    // $ Al click oppure al keyup di invio verrà inviato un nuovo messaggio
     sendNewMessage() {
       const message = {
         text: this.newMessage,
@@ -393,28 +406,37 @@ const boolzapp = new Vue({
       this.newMessage = "";
     },
   },
+
+  // # Dati ottenuti in funzione dei data
   computed: {
+    // $ Visualizziamo tutti messaggi della chat correntemente visualizzata
     rendAllMessage() {
       const index = this.currentActiveIndex;
       const currentChat = this.contacts[index].contactMessageList;
       const lastMessage = currentChat[currentChat.length - 1].whoIs;
 
-      let contactsTimingResponse = setTimeout(() => {
-        if (lastMessage) {
+      // Controlliamo se l'ultimo messaggio l'ha mandato l'utente:
+      // se così fosse allora verrà inviata una risposta dal contatto
+      if (lastMessage) {
+        let contactsTimingResponse = setTimeout(() => {
           const contactMess = {
             text: "ok",
             whoIs: 0,
           };
           currentChat.push(contactMess);
-        }
-      }, 1000);
+        }, 1000);
+      }
 
+      // Reinderizziamo la chat tra il contatto attivo e l'utente
       const rendAllMessage = currentChat.map((message, i) => {
         return message;
       });
+
       return rendAllMessage;
     },
 
+    // $ Filtriamo i contatti dei vari nella lista dei contatti
+    // $ in funzione del value del search input
     filterContacts() {
       let filterContacts = [];
       if (this.searchValue === "") {
