@@ -186,6 +186,12 @@ const boolzapp = new Vue({
     buildSrc(avatar) {
       return `img/avatar${avatar}.jpg`;
     },
+    cancelThisMessage(i) {
+      const index = this.currentActiveIndex;
+      const chat = this.contacts[index].messages;
+      chat.splice(i, 1);
+      console.log("Messaggio eliminato: ");
+    },
   },
 
   // # Dati ottenuti in funzione dei data

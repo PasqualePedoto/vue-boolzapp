@@ -106,7 +106,7 @@ figure img {
 
 #ab-disable-desk-not p,
 #contact-on-top p {
-  font-size: 12px;
+  font-size: 10px;
   line-height: auto;
 }
 
@@ -226,6 +226,8 @@ Design del messaggio generico
   max-width: 300px;
 
   box-shadow: 1px 3px 3px #999;
+
+  cursor: pointer;
 }
 
 /* User message */
@@ -256,4 +258,25 @@ Design del messaggio generico
 }
 
 .message .dropdown-cancel-message {
+  background-color: transparent;
+  border: 0;
+
+  visibility: hidden;
+}
+.message:hover .dropdown-cancel-message {
+  visibility: visible;
+}
+
+.contact-message .contact-dropdown {
+  height: 10px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.user-message .user-dropdown {
+  height: 10px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
 }

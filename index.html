@@ -133,8 +133,8 @@
               </section>
             </div>
 
-            <!-- Chat -->
             <div id="chat-area" class="col-8 h-100 p-0">
+              <!-- Chat -->
               <section id="whatsapp-header" class="h-100 d-flex flex-column">
                 <div
                   v-for="(contact,index) in contacts"
@@ -168,27 +168,41 @@
                       v-for="(message,index) in contacts[currentActiveIndex].messages"
                       class="w-100 my-2"
                     >
-                      <div v-if="message.status === 'sent'" class="d-flex message-on-right">
-                        <div class="message user-message position-relative">
+                      <div
+                        v-if="message.status === 'sent'"
+                        class="d-flex message-on-right drop-message"
+                      >
+                        <div class="message user-message">
                           <p class="text-start m-0">{{message.text}}</p>
                           <p class="text-end message-date m-0">{{message.date}}</p>
-                          <div class="position-absolute dropdown-cancel-message">
+                          <div class="user-dropdown">
                             <button
-                              class="dropdown-toggle"
+                              class="dropdown-toggle dropdown-cancel-message"
                               type="button"
                               data-bs-toggle="dropdown"
                               aria-expanded="false"
                             ></button>
                             <ul class="dropdown-menu">
-                              <li>cancella messaggio</li>
+                              <li @click="cancelThisMessage(index)">cancella messaggio</li>
                             </ul>
                           </div>
                         </div>
                       </div>
-                      <div v-else class="d-flex message-on-left">
+                      <div v-else class="d-flex message-on-left drop-message">
                         <div class="message contact-message">
                           <p class="text-start m-0">{{message.text}}</p>
                           <p class="text-end message-date m-0">{{ message.date }}</p>
+                          <div class="contact-dropdown">
+                            <button
+                              class="dropdown-toggle dropdown-cancel-message text-end"
+                              type="button"
+                              data-bs-toggle="dropdown"
+                              aria-expanded="false"
+                            ></button>
+                            <ul class="dropdown-menu">
+                              <li @click="cancelThisMessage(index)">cancella messaggio</li>
+                            </ul>
+                          </div>
                         </div>
                       </div>
                     </div>
