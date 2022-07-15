@@ -97,13 +97,17 @@ figure img {
 
 /*
 - Ridimensioniamo il font-size nella gestione delle notifiche desktop
-- settimao il line-height altrimenti il tag p di BS fa di testa sua 
+- settiamo il line-height altrimenti il tag p di BS fa di testa sua 
 */
 
 #ab-disable-desk-not p,
 #contact-on-top p {
   font-size: 12px;
   line-height: auto;
+}
+
+nav {
+  height: 60px;
 }
 
 #chat-spotlight {
@@ -122,7 +126,7 @@ figure img {
 #contact-chats {
   width: 100%;
 
-  height: calc(100% - 206px);
+  height: calc(100% - 226px);
   overflow-y: scroll;
 }
 

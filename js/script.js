@@ -48,6 +48,7 @@ const boolzapp = new Vue({
   name: "Boolzapp",
   el: "#root",
   data: {
+    searchValue: "",
     currentActiveIndex: 0,
     newMessage: "",
     user: {
@@ -384,8 +385,9 @@ const boolzapp = new Vue({
         text: this.newMessage,
         whoIs: 1,
       };
-      const currentChat =
-        this.contacts[this.currentActiveIndex].contactMessageList;
+
+      const index = this.currentActiveIndex;
+      const currentChat = this.contacts[index].contactMessageList;
       currentChat.push(message);
 
       this.newMessage = "";
@@ -397,13 +399,12 @@ const boolzapp = new Vue({
       const currentChat = this.contacts[index].contactMessageList;
       const lastMessage = currentChat[currentChat.length - 1].whoIs;
 
-      setTimeout(() => {
+      let contactsTimingResponse = setTimeout(() => {
         if (lastMessage) {
           const contactMess = {
             text: "ok",
             whoIs: 0,
           };
-          console.log("ci sono");
           currentChat.push(contactMess);
         }
       }, 1000);
@@ -412,6 +413,20 @@ const boolzapp = new Vue({
         return message;
       });
       return rendAllMessage;
+    },
+
+    filterContacts() {
+      let filterContacts = [];
+      if (this.searchValue === "") {
+        filterContacts = this.contacts.map((contact) => {
+          return contact;
+        });
+      } else {
+        filterContacts = this.contacts.filter((contact) => {
+          return contact.name.includes(this.searchValue);
+        });
+      }
+      return filterContacts;
     },
   },
 });
