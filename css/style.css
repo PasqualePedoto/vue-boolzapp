@@ -104,9 +104,8 @@ figure img {
 - settiamo il line-height altrimenti il tag p di BS fa di testa sua 
 */
 
-#ab-disable-desk-not p,
-#contact-on-top p {
-  font-size: 10px;
+#ab-disable-desk-not p {
+  font-size: 15px;
   line-height: auto;
 }
 
@@ -120,6 +119,10 @@ nav {
 
 #input-chat {
   border-radius: 0;
+}
+
+.delete-input-shadow {
+  box-shadow: 0;
 }
 
 /* 
@@ -150,6 +153,14 @@ nav {
   cursor: pointer;
 }
 
+#contact-chats .chat-contact:hover {
+  background-color: rgb(243, 237, 237);
+}
+
+#contact-chats .chat-contact.active-chat {
+  background-color: #dedede;
+}
+
 #contact-chats .contact-info {
   display: flex;
   flex-direction: column;
@@ -158,7 +169,7 @@ nav {
 }
 
 /* 
-Barra de
+Barra dell'utente
 */
 
 #contact-on-top {
@@ -177,6 +188,14 @@ Chat area
 
 #chat-area {
   height: 80vh;
+}
+
+/*
+- Cambiamo il font size riguardo l'accesso nella chat
+*/
+
+#contact-on-top p {
+  font-size: 12px;
 }
 
 /*
@@ -250,12 +269,20 @@ Design del messaggio generico
   justify-content: flex-start;
 }
 
-/* Ridimensioniamo la data del messaggio */
+/* 
+- Ridimensioniamo la data del messaggio e la data nella 
+- lista di contatti
+*/
 
-.message-date {
+.message-date,
+#contact-chats .chat-contact .chat-date {
   font-size: 12px;
   color: gray;
 }
+
+/*
+- Settiamo il back-ground e il bordo definiti da BootStrap 
+*/
 
 .message .dropdown-cancel-message {
   background-color: transparent;
@@ -263,9 +290,20 @@ Design del messaggio generico
 
   visibility: hidden;
 }
+
+/*
+- Nel momento in cui andiamo in hover sul singolo messaggio
+  compare il dropdown menu
+*/
+
 .message:hover .dropdown-cancel-message {
   visibility: visible;
 }
+
+/*
+- Modelliamo la position e lo style del dropdown menu in base
+  a se il messaggio è dell'utente oppure del contatto
+*/
 
 .contact-message .contact-dropdown {
   height: 10px;
