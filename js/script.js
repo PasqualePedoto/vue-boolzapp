@@ -68,6 +68,41 @@ const boolzapp = new Vue({
     // delle notifiche
     isHereNotifications: true,
 
+    // Proprietà che gestisce il toggle delle emoji
+    isEmojiClicked: false,
+
+    // Lista di emoji
+    emojis: [
+      "&#128540;",
+      "&#128513;",
+      "&#128514;",
+      "&#128515;",
+      "&#128516;",
+      "&#128523;",
+      "&#128527;",
+      "&#128528;",
+      "&#128529;",
+      "&#128534;",
+      "&#128535;",
+      "&#128538;",
+      "&#128539;",
+      "&#128546;",
+      "&#128517;",
+      "&#128518;",
+      "&#128519;",
+      "&#128521;",
+      "&#128522;",
+      "&#128524;",
+      "&#128525;",
+      "&#128526;",
+      "&#128530;",
+      "&#128531;",
+      "&#128532;",
+      "&#128533;",
+      "&#128536;",
+      "&#128537;",
+    ],
+
     user: {
       name: "Pasquale",
       avatar: "_io",
@@ -211,6 +246,11 @@ const boolzapp = new Vue({
     removeNotificationRequest() {
       this.isHereNotifications = false;
     },
+
+    // $ Funzione che gestisce il toggle dell'emoji area
+    showEmojiArea() {
+      this.isEmojiClicked = !this.isEmojiClicked;
+    },
   },
 
   // # Dati ottenuti in funzione dei data
@@ -231,6 +271,16 @@ const boolzapp = new Vue({
         });
       }
       return filteredContacts;
+    },
+
+    clearEmojis() {
+      let clearEmojis = this.emojis.map((emoji, index) => {
+        let newEmoji = emoji.substring(0, emoji.length);
+        console.log(newEmoji);
+        return newEmoji;
+      });
+
+      return clearEmojis;
     },
   },
 });
