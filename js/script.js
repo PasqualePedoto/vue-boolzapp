@@ -159,14 +159,25 @@ const boolzapp = new Vue({
 
     // $ Al click oppure al keyup di invio verrà inviato un nuovo messaggio
     sendNewMessage() {
-      const message = {
+      const userMessage = {
         text: this.newMessage,
-        whoIs: 1,
+        status: "sent",
+        date: "10/01/2020 15:30:55",
+      };
+
+      const contactMessage = {
+        text: "ok",
+        status: "received",
+        date: "10/01/2020 15:30:55",
       };
 
       const index = this.currentActiveIndex;
-      const currentChat = this.contacts[index].contactMessageList;
-      currentChat.push(message);
+      const currentChat = this.contacts[index].messages;
+      currentChat.push(userMessage);
+
+      setTimeout(() => {
+        currentChat.push(contactMessage);
+      }, 1000);
 
       this.newMessage = "";
     },
@@ -188,7 +199,7 @@ const boolzapp = new Vue({
           return contact;
         });
       } else {
-        filterContacts = this.contacts.filter((contact) => {
+        filteredContacts = this.contacts.filter((contact) => {
           return contact.name.includes(this.searchValue);
         });
       }
