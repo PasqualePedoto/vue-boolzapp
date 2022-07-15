@@ -197,6 +197,8 @@ const boolzapp = new Vue({
     buildSrc(avatar) {
       return `img/avatar${avatar}.jpg`;
     },
+
+    // $ Funzione che elimina il messaggio tramite il suo dropdown menu
     cancelThisMessage(i) {
       const index = this.currentActiveIndex;
       const chat = this.contacts[index].messages;
