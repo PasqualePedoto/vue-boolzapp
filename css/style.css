@@ -10,6 +10,10 @@ a {
   color: gray;
 }
 
+section {
+  padding: 0;
+}
+
 /* UTILS */
 
 .my-border {
@@ -45,9 +49,7 @@ body {
 
 main {
   height: 80vh;
-  width: 70vw;
-
-  box-shadow: 1px 3px 3px #999;
+  width: 90vw;
 }
 
 /* **************

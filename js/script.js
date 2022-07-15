@@ -405,6 +405,11 @@ const boolzapp = new Vue({
 
       this.newMessage = "";
     },
+
+    // $ Usiamo una funzione per calcolare src delle foto delle persone
+    buildSrc(avatar) {
+      return `img/avatar${avatar}.jpg`;
+    },
   },
 
   // # Dati ottenuti in funzione dei data
@@ -452,3 +457,16 @@ const boolzapp = new Vue({
     },
   },
 });
+
+// # DAYJS
+
+dayjs.extend(dayjs_plugin_customParseFormat);
+dayjs.locale("it");
+
+const date = dayjs("2021-12-11 15:10:00").format("DD/MM/YYYY HH:mm:ss");
+console.log(date);
+
+dayjs.extend(dayjs_plugin_relativeTime);
+
+const oldDate = dayjs("1996-11-04").fromNow();
+console.log(oldDate);
