@@ -168,27 +168,29 @@ const boolzapp = new Vue({
 
     // $ Al click oppure al keyup di invio verrà inviato un nuovo messaggio
     sendNewMessage() {
-      const userMessage = {
-        text: this.newMessage,
-        status: "sent",
-        date: "10/01/2020 15:30:55",
-      };
+      if (this.newMessage !== "") {
+        const userMessage = {
+          text: this.newMessage,
+          status: "sent",
+          date: "10/01/2020 15:30:55",
+        };
 
-      const contactMessage = {
-        text: "ok",
-        status: "received",
-        date: "10/01/2020 15:30:55",
-      };
+        const contactMessage = {
+          text: "ok",
+          status: "received",
+          date: "10/01/2020 15:30:55",
+        };
 
-      const index = this.currentActiveIndex;
-      const currentChat = this.contacts[index].messages;
-      currentChat.push(userMessage);
+        const index = this.currentActiveIndex;
+        const currentChat = this.contacts[index].messages;
+        currentChat.push(userMessage);
 
-      setTimeout(() => {
-        currentChat.push(contactMessage);
-      }, 1000);
+        setTimeout(() => {
+          currentChat.push(contactMessage);
+        }, 1000);
 
-      this.newMessage = "";
+        this.newMessage = "";
+      }
     },
 
     // $ Usiamo una funzione per calcolare src delle foto delle persone
