@@ -67,318 +67,83 @@ const boolzapp = new Vue({
       {
         name: "Michele",
         avatar: "_1",
-        contactMessageList: [
+        visible: true,
+        messages: [
           {
-            text: "ciao",
-            whoIs: 1,
+            date: "10/01/2020 15:30:55",
+            text: "Hai portato a spasso il cane?",
+            status: "sent",
           },
           {
-            text: "ciao",
-            whoIs: 0,
+            date: "10/01/2020 15:50:00",
+            text: "Ricordati di dargli da mangiare",
+            status: "sent",
           },
           {
-            text: "ciao",
-            whoIs: 1,
-          },
-          {
-            text: "ciao",
-            whoIs: 0,
-          },
-          {
-            text: "ciao",
-            whoIs: 1,
+            date: "10/01/2020 16:15:22",
+            text: "Tutto fatto!",
+            status: "received",
           },
         ],
       },
       {
         name: "Fabio",
         avatar: "_2",
-        contactMessageList: [
+        visible: true,
+        messages: [
           {
-            text: "ciao",
-            whoIs: 1,
+            date: "20/03/2020 16:30:00",
+            text: "Ciao come stai?",
+            status: "sent",
           },
           {
-            text: "ciao",
-            whoIs: 0,
+            date: "20/03/2020 16:30:55",
+            text: "Bene grazie! Stasera ci vediamo?",
+            status: "received",
           },
           {
-            text: "ciao",
-            whoIs: 1,
-          },
-          {
-            text: "ciao",
-            whoIs: 0,
-          },
-          {
-            text: "ciao",
-            whoIs: 1,
+            date: "20/03/2020 16:35:00",
+            text: "Mi piacerebbe ma devo andare a fare la spesa.",
+            status: "received",
           },
         ],
       },
       {
         name: "Samuele",
         avatar: "_3",
-        contactMessageList: [
+        visible: true,
+        messages: [
           {
-            text: "ciao",
-            whoIs: 1,
+            date: "28/03/2020 10:10:40",
+            text: "La Marianna va in campagna",
+            status: "received",
           },
           {
-            text: "ciao",
-            whoIs: 0,
+            date: "28/03/2020 10:20:10",
+            text: "Sicuro di non aver sbagliato chat?",
+            status: "sent",
           },
           {
-            text: "ciao",
-            whoIs: 1,
-          },
-          {
-            text: "ciao",
-            whoIs: 0,
-          },
-          {
-            text: "ciao",
-            whoIs: 1,
+            date: "28/03/2020 16:15:22",
+            text: "Ah scusa!",
+            status: "received",
           },
         ],
       },
       {
         name: "Luisa",
         avatar: "_4",
-        contactMessageList: [
+        visible: true,
+        messages: [
           {
-            text: "ciao",
-            whoIs: 1,
+            date: "10/01/2020 15:30:55",
+            text: "Lo sai che ha aperto una nuova pizzeria?",
+            status: "sent",
           },
           {
-            text: "ciao",
-            whoIs: 0,
-          },
-          {
-            text: "ciao",
-            whoIs: 1,
-          },
-          {
-            text: "ciao",
-            whoIs: 0,
-          },
-          {
-            text: "ciao",
-            whoIs: 1,
-          },
-        ],
-      },
-      {
-        name: "Luisa",
-        avatar: "_5",
-        contactMessageList: [
-          {
-            text: "ciao",
-            whoIs: 1,
-          },
-          {
-            text: "ciao",
-            whoIs: 0,
-          },
-          {
-            text: "ciao",
-            whoIs: 1,
-          },
-          {
-            text: "ciao",
-            whoIs: 0,
-          },
-          {
-            text: "ciao",
-            whoIs: 1,
-          },
-        ],
-      },
-      {
-        name: "Orazio",
-        avatar: "_6",
-        contactMessageList: [
-          {
-            text: "ciao",
-            whoIs: 1,
-          },
-          {
-            text: "ciao",
-            whoIs: 0,
-          },
-          {
-            text: "ciao",
-            whoIs: 1,
-          },
-          {
-            text: "ciao",
-            whoIs: 0,
-          },
-          {
-            text: "ciao",
-            whoIs: 1,
-          },
-        ],
-      },
-      {
-        name: "Orlando",
-        avatar: "_7",
-        contactMessageList: [
-          {
-            text: "ciao",
-            whoIs: 1,
-          },
-          {
-            text: "ciao",
-            whoIs: 0,
-          },
-          {
-            text: "ciao",
-            whoIs: 1,
-          },
-          {
-            text: "ciao",
-            whoIs: 0,
-          },
-          {
-            text: "ciao",
-            whoIs: 1,
-          },
-        ],
-      },
-      {
-        name: "Giuseppe",
-        avatar: "_8",
-        contactMessageList: [
-          {
-            text: "ciao",
-            whoIs: 1,
-          },
-          {
-            text: "ciao",
-            whoIs: 0,
-          },
-          {
-            text: "ciao",
-            whoIs: 1,
-          },
-          {
-            text: "ciao",
-            whoIs: 0,
-          },
-          {
-            text: "ciao",
-            whoIs: 1,
-          },
-        ],
-      },
-      {
-        name: "Pinocchio",
-        avatar: "_1",
-        contactMessageList: [
-          {
-            text: "ciao",
-            whoIs: 1,
-          },
-          {
-            text: "ciao",
-            whoIs: 0,
-          },
-          {
-            text: "ciao",
-            whoIs: 1,
-          },
-          {
-            text: "ciao",
-            whoIs: 0,
-          },
-          {
-            text: "ciao",
-            whoIs: 1,
-          },
-        ],
-      },
-      {
-        name: "Eren",
-        avatar: "_2",
-        contactMessageList: [
-          {
-            text: "ciao",
-            whoIs: 1,
-          },
-          {
-            text: "cavallo pazzo rabiot",
-            whoIs: 0,
-          },
-          {
-            text: "cavallo pazzo rabiot",
-            whoIs: 0,
-          },
-          {
-            text: "cavallo pazzo rabiot",
-            whoIs: 0,
-          },
-          {
-            text: "cavallo pazzo rabiot",
-            whoIs: 0,
-          },
-          {
-            text: "cavallo pazzo rabiot",
-            whoIs: 0,
-          },
-          {
-            text: "cavallo pazzo rabiot",
-            whoIs: 0,
-          },
-          {
-            text: "cavallo pazzo rabiot",
-            whoIs: 0,
-          },
-          {
-            text: "cavallo pazzo rabiot",
-            whoIs: 0,
-          },
-          {
-            text: "cavallo pazzo rabiot",
-            whoIs: 0,
-          },
-          {
-            text: "ciao",
-            whoIs: 1,
-          },
-          {
-            text: "ciao",
-            whoIs: 0,
-          },
-          {
-            text: "ciao",
-            whoIs: 1,
-          },
-        ],
-      },
-      {
-        name: "Mikasa",
-        avatar: "_3",
-        contactMessageList: [
-          {
-            text: "ciao",
-            whoIs: 1,
-          },
-          {
-            text: "cavallo",
-            whoIs: 0,
-          },
-          {
-            text: "ciao",
-            whoIs: 1,
-          },
-          {
-            text: "ciao",
-            whoIs: 0,
-          },
-          {
-            text: "ciao",
-            whoIs: 1,
+            date: "10/01/2020 15:50:00",
+            text: "Si, ma preferirei andare al cinema",
+            status: "received",
           },
         ],
       },
@@ -414,38 +179,12 @@ const boolzapp = new Vue({
 
   // # Dati ottenuti in funzione dei data
   computed: {
-    // $ Visualizziamo tutti messaggi della chat correntemente visualizzata
-    rendAllMessage() {
-      const index = this.currentActiveIndex;
-      const currentChat = this.contacts[index].contactMessageList;
-      const lastMessage = currentChat[currentChat.length - 1].whoIs;
-
-      // Controlliamo se l'ultimo messaggio l'ha mandato l'utente:
-      // se così fosse allora verrà inviata una risposta dal contatto
-      if (lastMessage) {
-        let contactsTimingResponse = setTimeout(() => {
-          const contactMess = {
-            text: "ok",
-            whoIs: 0,
-          };
-          currentChat.push(contactMess);
-        }, 1000);
-      }
-
-      // Reinderizziamo la chat tra il contatto attivo e l'utente
-      const rendAllMessage = currentChat.map((message, i) => {
-        return message;
-      });
-
-      return rendAllMessage;
-    },
-
     // $ Filtriamo i contatti dei vari nella lista dei contatti
     // $ in funzione del value del search input
-    filterContacts() {
-      let filterContacts = [];
+    filteredContacts() {
+      let filteredContacts = [];
       if (this.searchValue === "") {
-        filterContacts = this.contacts.map((contact) => {
+        filteredContacts = this.contacts.map((contact) => {
           return contact;
         });
       } else {
@@ -453,7 +192,7 @@ const boolzapp = new Vue({
           return contact.name.includes(this.searchValue);
         });
       }
-      return filterContacts;
+      return filteredContacts;
     },
   },
 });

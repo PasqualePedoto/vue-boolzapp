@@ -113,7 +113,7 @@
                   <!-- SECTION : Contact chats -->
                   <section id="contact-chats" class="flex-grow-1">
                     <div
-                      v-for="(contact,index) in filterContacts"
+                      v-for="(contact,index) in filteredContacts"
                       class="chat-contact p-2"
                       @click="changeChat(index)"
                     >
@@ -164,11 +164,25 @@
 
                 <section id="message-area" class="flex-grow-1">
                   <div id="whatsapp-message" class="px-2">
-                    <div v-for="(message,index) in rendAllMessage" class="w-100 my-2">
-                      <div v-if="message.whoIs === 1" class="d-flex message-on-right">
-                        <div class="message user-message">
+                    <div
+                      v-for="(message,index) in contacts[currentActiveIndex].messages"
+                      class="w-100 my-2"
+                    >
+                      <div v-if="message.status === 'sent'" class="d-flex message-on-right">
+                        <div class="message user-message position-relative">
                           <p class="text-start m-0">{{message.text}}</p>
                           <p class="text-end message-date m-0">date</p>
+                          <div class="position-absolute dropdown-cancel-message">
+                            <button
+                              class="dropdown-toggle"
+                              type="button"
+                              data-bs-toggle="dropdown"
+                              aria-expanded="false"
+                            ></button>
+                            <ul class="dropdown-menu">
+                              <li>cancella messaggio</li>
+                            </ul>
+                          </div>
                         </div>
                       </div>
                       <div v-else class="d-flex message-on-left">
