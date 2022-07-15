@@ -52,9 +52,9 @@
             <div class="col-4 h-100 p-0">
               <!-- User control panel -->
               <section id="user-control-panel" class="h-100">
-                <div class="h-100">
+                <div class="h-100 d-flex flex-column">
                   <!-- SECTION : Control panel header  -->
-                  <section id="control-panel-header">
+                  <section id="control-panel-header" class="flex-shrink-0">
                     <div id="chat-header" class="p-2 d-flex justify-content-between">
                       <!-- Username and user image -->
                       <div class="d-flex align-items-center">
@@ -76,7 +76,7 @@
                   </section>
 
                   <!-- SECTION : Notifications management -->
-                  <section id="notifications-management">
+                  <section id="notifications-management" class="flex-shrink-0">
                     <div id="ab-disable-desk-not" class="p-3 d-flex align-items-center">
                       <figure
                         id="alert-figure"
@@ -94,7 +94,7 @@
                   </section>
 
                   <!-- SECTION :  Search contact -->
-                  <section id="search-contact">
+                  <section id="search-contact" class="flex-shrink-0">
                     <nav class="d-flex align-items-stretch">
                       <button class="border-0 p-2" id="chat-spotlight">
                         <i class="fa-solid fa-magnifying-glass"></i>
@@ -110,7 +110,7 @@
                   </section>
 
                   <!-- SECTION : Contact chats -->
-                  <section id="contact-chats">
+                  <section id="contact-chats" class="flex-grow-1">
                     <div
                       v-for="(contact,index) in filterContacts"
                       class="chat-contact p-2"

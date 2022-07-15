@@ -130,7 +130,6 @@ nav {
 #contact-chats {
   width: 100%;
 
-  height: calc(100% - 226px);
   overflow-y: scroll;
 
   background-color: white;
