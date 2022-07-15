@@ -135,11 +135,11 @@
 
             <!-- Chat -->
             <div id="chat-area" class="col-8 h-100 p-0">
-              <section id="whatsapp-header" class="h-100">
+              <section id="whatsapp-header" class="h-100 d-flex flex-column">
                 <div
                   v-for="(contact,index) in contacts"
                   v-show="currentActiveIndex === index"
-                  class="p-2"
+                  class="p-2 flex-shrink-0"
                   id="contact-on-top"
                 >
                   <div class="d-flex">
@@ -162,7 +162,7 @@
                   </div>
                 </div>
 
-                <section id="message-area">
+                <section id="message-area" class="flex-grow-1">
                   <div id="whatsapp-message" class="px-2">
                     <div v-for="(message,index) in rendAllMessage" class="w-100 my-2">
                       <div v-if="message.whoIs === 1" class="d-flex message-on-right">
@@ -181,7 +181,7 @@
                   </div>
                 </section>
 
-                <section id="input-area">
+                <section id="input-area" class="flex-shrink-0">
                   <div id="write-message">
                     <a href="#" class="d-block mx-3"><i class="fa-solid fa-face-grin"></i></a>
                     <input
