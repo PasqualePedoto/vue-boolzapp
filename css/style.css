@@ -77,6 +77,18 @@ figure img {
   object-fit: cover;
 }
 
+/* Notifications-management */
+
+#notifications-management button {
+  background-color: transparent;
+  border: 0;
+  padding: 0;
+}
+
+#notifications-management button p {
+  text-decoration: solid;
+}
+
 /*
 - Background delle notifiche 
 */

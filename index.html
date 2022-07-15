@@ -73,16 +73,16 @@
                   </section>
 
                   <!-- SECTION : Notifications management -->
-                  <section id="notifications-management" class="flex-shrink-0">
+                  <section id="notifications-management" class="flex-shrink-0" v-show="isHereNotifications">
                     <div id="ab-disable-desk-not" class="p-3 d-flex align-items-center">
                       <figure id="alert-figure" class="m-0 rounded-circle d-flex align-items-center justify-content-center">
                         <i class="fa-solid fa-bell-slash fa-2x"></i>
                       </figure>
                       <div class="ms-2">
                         <p class="mb-1">Ricevi notifiche di nuovi messaggi</p>
-                        <a href="#">
-                          <p class="m-0">Attiva notifiche Desktop</p>
-                        </a>
+                        <button @click="removeNotificationRequest">
+                          <p class="m-0 text-decoration-underline">Attiva notifiche Desktop</p>
+                        </button>
                       </div>
                     </div>
                   </section>
@@ -113,6 +113,7 @@
               </section>
             </div>
 
+            <!-- Right column -->
             <div class="col-8 h-100 p-0">
               <!-- Chat -->
               <section id="chat-area" class="h-100 d-flex flex-column">

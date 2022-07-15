@@ -64,6 +64,10 @@ const boolzapp = new Vue({
     // Value dell'input nell'area messaggistica
     newMessage: "",
 
+    // Tale valore serve a determinare il display
+    // delle notifiche
+    isHereNotifications: true,
+
     user: {
       name: "Pasquale",
       avatar: "_io",
@@ -196,6 +200,12 @@ const boolzapp = new Vue({
       const chat = this.contacts[index].messages;
       chat.splice(i, 1);
       console.log("Messaggio eliminato: ");
+    },
+
+    // $ Funzione che ,al click del button nella sezione
+    // $ delle notifiche, rimuove quest'ultima
+    removeNotificationRequest() {
+      this.isHereNotifications = false;
     },
   },
 
