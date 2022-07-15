@@ -200,7 +200,9 @@ const boolzapp = new Vue({
         });
       } else {
         filteredContacts = this.contacts.filter((contact) => {
-          return contact.name.includes(this.searchValue);
+          const search = this.searchValue.toLowerCase();
+          const contatto = contact.name.toLowerCase();
+          return contatto.includes(search);
         });
       }
       return filteredContacts;
