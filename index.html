@@ -125,7 +125,8 @@
                     </figure>
                     <div id="activity-information">
                       <h6 class="m-0 my-1">{{contact.name}}</h6>
-                      <p class="m-0">ultimo accesso effettuato</p>
+                      <p v-if="isWritingContact">sta scrivendo...</p>
+                      <p v-else class="m-0">ultimo accesso effettuato alle {{contact.messages[contact.messages.length-1].date}}</p>
                     </div>
                   </div>
                   <div id="chat-set-icon" class="d-flex align-items-center">
@@ -173,7 +174,7 @@
                     <div class="position-relative">
                       <button @click="showEmojiArea" class="d-block mx-3 border-0"><i class="fa-solid fa-face-grin"></i></button>
                       <div class="emoji-area" v-show="isEmojiClicked">
-                        <div @click="addEmojionMessageInput(index)" v-for="(emoji,index) in clearEmojis">
+                        <div @click="addEmojionMessageInput(index)" v-for="(emoji,index) in clearedEmojis">
                           <span v-html="emoji"></span>
                         </div>
                       </div>

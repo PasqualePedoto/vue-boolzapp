@@ -71,6 +71,9 @@ const boolzapp = new Vue({
     // Proprietà che gestisce il toggle delle emoji
     isEmojiClicked: false,
 
+    // Proprietà che controlla se il contatto sta scrivendo
+    isWritingContact: false,
+
     // Lista di emoji
     emojis: [
       "&#128540;",
@@ -220,8 +223,11 @@ const boolzapp = new Vue({
         const currentChat = this.contacts[index].messages;
         currentChat.push(userMessage);
 
+        this.isWritingContact = true;
+
         setTimeout(() => {
           currentChat.push(contactMessage);
+          this.isWritingContact = false;
         }, 1000);
 
         this.newMessage = "";
@@ -281,13 +287,13 @@ const boolzapp = new Vue({
     },
 
     // $ Eliminare le doppie apici delle emoji
-    clearEmojis() {
-      let clearEmojis = this.emojis.map((emoji, index) => {
+    clearedEmojis() {
+      let clearedEmojis = this.emojis.map((emoji, index) => {
         let newEmoji = emoji.substring(0, emoji.length);
         return newEmoji;
       });
 
-      return clearEmojis;
+      return clearedEmojis;
     },
   },
 });
