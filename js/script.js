@@ -251,6 +251,13 @@ const boolzapp = new Vue({
     showEmojiArea() {
       this.isEmojiClicked = !this.isEmojiClicked;
     },
+
+    // $ Aggiungiamo l'emoji al resto del messaggio
+    addEmojionMessageInput(index) {
+      let emoticon = this.emojis[index];
+      let newEmoticon = emoticon.substring(0, emoticon.length);
+      this.newMessage = this.newMessage + newEmoticon;
+    },
   },
 
   // # Dati ottenuti in funzione dei data
@@ -273,10 +280,10 @@ const boolzapp = new Vue({
       return filteredContacts;
     },
 
+    // $ Eliminare le doppie apici delle emoji
     clearEmojis() {
       let clearEmojis = this.emojis.map((emoji, index) => {
         let newEmoji = emoji.substring(0, emoji.length);
-        console.log(newEmoji);
         return newEmoji;
       });
 

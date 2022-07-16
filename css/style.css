@@ -354,6 +354,19 @@ Design del messaggio generico
 .emoji-area > * {
   margin: 5px;
 
-  width: 18px;
-  height: 18px;
+  width: 22px;
+  height: 22px;
+
+  border: 1px solid transparent;
+  border-radius: 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+}
+
+.emoji-area > div:hover {
+  border-color: gray;
 }
