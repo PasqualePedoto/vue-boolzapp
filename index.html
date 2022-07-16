@@ -121,8 +121,8 @@
                       </figure>
                       <div class="contact-info ms-2">
                         <p class="mb-1">{{contact.name}}</p>
-                        <!-- <p v-if="contact.messages.length" class="m-0 chat-date">{{ contact.messages[contact.messages.length - 1].date}}</p>
-                        <p v-else class="m-0 chat-date"></p> -->
+                        <div v-if="contact.messages.length !== 0" class="m-0 chat-date">{{ contact.messages[contact.messages.length - 1].date}}</div>
+                        <div v-else class="chat-date m-0"></div>
                       </div>
                     </div>
                   </section>
@@ -155,7 +155,7 @@
                 <!-- SECTION : Message area -->
                 <section id="message-area" class="flex-grow-1">
                   <div id="whatsapp-message" class="px-2">
-                    <div v-for="(message,index) in contacts[currentActiveIndex].messages" class="w-100 my-2">
+                    <div v-for="(message,index) in contacts[currentActiveIndex].messages" v-show="contacts[currentActiveIndex].messages.length !== 0" class="w-100 my-2">
                       <div v-if="message.status === 'sent'" class="d-flex message-on-right drop-message">
                         <div class="message user-message">
                           <p class="text-start m-0" v-html="message.text"></p>
@@ -168,7 +168,7 @@
                           </div>
                         </div>
                       </div>
-                      <div v-else class="d-flex message-on-left drop-message">
+                      <div v-else-if="message.status === 'received'" class="d-flex message-on-left drop-message">
                         <div class="message contact-message">
                           <p class="text-start m-0" v-html="message.text"></p>
                           <p class="text-end message-date m-0">{{ message.date }}</p>
