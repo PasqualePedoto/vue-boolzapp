@@ -132,7 +132,7 @@
 
             <!-- Right column -->
             <div class="col-8 h-100 p-0">
-              <!-- Chat -->
+              <!-- SECTION : Chat area -->
               <section id="chat-area" class="h-100 d-flex flex-column">
                 <div v-for="(contact,index) in contacts" v-show="currentActiveIndex === index" class="p-2 flex-shrink-0" id="contact-on-top">
                   <div class="d-flex">
@@ -142,7 +142,12 @@
                     <div id="activity-information">
                       <h6 class="m-0 my-1">{{contact.name}}</h6>
                       <p v-if="isWritingContact">sta scrivendo...</p>
-                      <p v-else class="m-0">ultimo accesso effettuato alle {{contact.messages[contact.messages.length-1].date}}</p>
+                      <p v-else class="m-0">
+                        <p v-if="contacts[currentActiveIndex].messages.length !== 0">
+                          ultimo accesso effettuato alle {{contact.messages[contact.messages.length-1].date}}
+                        </p>
+                        <p v-else></p>
+                      </p>
                     </div>
                   </div>
                   <div id="chat-set-icon" class="d-flex align-items-center">
@@ -155,11 +160,12 @@
                 <!-- SECTION : Message area -->
                 <section id="message-area" class="flex-grow-1">
                   <div id="whatsapp-message" class="px-2">
-                    <div v-for="(message,index) in contacts[currentActiveIndex].messages" v-show="contacts[currentActiveIndex].messages.length !== 0" class="w-100 my-2">
+                    <div v-if="contacts[currentActiveIndex].messages.length !== 0" v-for="(message,index) in contacts[currentActiveIndex].messages" class="w-100 my-2">
+                      <!-- Messaggio dell'utente -->
                       <div v-if="message.status === 'sent'" class="d-flex message-on-right drop-message">
                         <div class="message user-message">
                           <p class="text-start m-0" v-html="message.text"></p>
-                          <p class="text-end message-date m-0">{{message.date}}</p>
+                          <p v-if="contacts[currentActiveIndex].messages.length !== 0" class="text-end message-date m-0">{{message.date}}</p>
                           <div class="user-dropdown">
                             <button class="dropdown-toggle dropdown-cancel-message" type="button" data-bs-toggle="dropdown" aria-expanded="false"></button>
                             <ul class="dropdown-menu">
@@ -168,10 +174,12 @@
                           </div>
                         </div>
                       </div>
+
+                      <!-- Messaggio del contatto -->
                       <div v-else-if="message.status === 'received'" class="d-flex message-on-left drop-message">
                         <div class="message contact-message">
                           <p class="text-start m-0" v-html="message.text"></p>
-                          <p class="text-end message-date m-0">{{ message.date }}</p>
+                          <p v-if="contacts[currentActiveIndex].messages.length !== 0" class="text-start message-date m-0">{{ message.date }}</p>
                           <div class="contact-dropdown">
                             <button class="dropdown-toggle dropdown-cancel-message text-end" type="button" data-bs-toggle="dropdown" aria-expanded="false"></button>
                             <ul class="dropdown-menu">
