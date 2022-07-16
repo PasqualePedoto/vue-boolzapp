@@ -143,8 +143,8 @@
                       <h6 class="m-0 my-1">{{contact.name}}</h6>
                       <p v-if="isWritingContact">sta scrivendo...</p>
                       <p v-else class="m-0">
-                        <p v-if="contacts[currentActiveIndex].messages.length !== 0">
-                          ultimo accesso effettuato alle {{contact.messages[contact.messages.length-1].date}}
+                        <p v-if="contact.messages.length !== 0">
+                          ultimo accesso effettuato alle {{contact.date}}
                         </p>
                         <p v-else></p>
                       </p>

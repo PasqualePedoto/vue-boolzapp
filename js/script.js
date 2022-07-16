@@ -282,16 +282,8 @@ const boolzapp = new Vue({
         name: this.newContact,
         avatar: "_2",
         visible: true,
-        messages: [],
+        messages: [{}],
       };
-
-      let message = {
-        date: "10/01/2020 15:30:55",
-        text: "Hai portato a spasso il cane?",
-        status: "sent",
-      };
-
-      contatto.messages.push(message);
 
       this.contacts.push(contatto);
 
