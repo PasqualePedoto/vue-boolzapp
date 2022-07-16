@@ -74,6 +74,13 @@ const boolzapp = new Vue({
     // Proprietà che controlla se il contatto sta scrivendo
     isWritingContact: false,
 
+    // Variabile che gestisce il botton per droppare
+    // la section per l'input del nuovo contatto
+    dropInputNewContact: false,
+
+    // Value dell'input per l'inserimento del nuovo contatto
+    newContact: "",
+
     // Lista di emoji
     emojis: [
       "&#128540;",
@@ -244,7 +251,6 @@ const boolzapp = new Vue({
       const index = this.currentActiveIndex;
       const chat = this.contacts[index].messages;
       chat.splice(i, 1);
-      console.log("Messaggio eliminato: ");
     },
 
     // $ Funzione che ,al click del button nella sezione
@@ -263,6 +269,34 @@ const boolzapp = new Vue({
       let emoticon = this.emojis[index];
       let newEmoticon = emoticon.substring(0, emoticon.length);
       this.newMessage = this.newMessage + newEmoticon;
+    },
+
+    // $ Droppiamo il menu per inserire l'utente
+    createNewContact() {
+      this.dropInputNewContact = true;
+    },
+
+    // $ Aggiungiamo un nuovo contatto
+    addNewContact() {
+      const contatto = {
+        name: this.newContact,
+        avatar: "_2",
+        visible: true,
+        messages: [],
+      };
+
+      let message = {
+        date: "10/01/2020 15:30:55",
+        text: "Hai portato a spasso il cane?",
+        status: "sent",
+      };
+
+      contatto.messages.push(message);
+
+      this.contacts.push(contatto);
+
+      this.newContact = "";
+      this.dropInputNewContact = false;
     },
   },
 
@@ -300,13 +334,13 @@ const boolzapp = new Vue({
 
 // # DAYJS
 
-dayjs.extend(dayjs_plugin_customParseFormat);
-dayjs.locale("it");
+// dayjs.extend(dayjs_plugin_customParseFormat);
+// dayjs.locale("it");
 
-const date = dayjs("2021-12-11 15:10:00").format("DD/MM/YYYY HH:mm:ss");
-console.log(date);
+// const date = dayjs("2021-12-11 15:10:00").format("DD/MM/YYYY HH:mm:ss");
+// console.log(date);
 
-dayjs.extend(dayjs_plugin_relativeTime);
+// dayjs.extend(dayjs_plugin_relativeTime);
 
-const oldDate = dayjs("1996-11-04").fromNow();
-console.log(oldDate);
+// const oldDate = dayjs("1996-11-04").fromNow();
+// console.log(oldDate);

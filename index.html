@@ -66,9 +66,9 @@
                         <span class="h6 m-0">{{user.name}}</span>
                       </div>
                       <div id="set-icon-chat-header" class="d-flex align-items-center">
-                        <a href="#"><i class="fa-solid fa-circle-notch me-3"></i></a>
-                        <a href="#"><i class="fa-solid fa-message me-3"></i></a>
-                        <a href="#"><i class="fa-solid fa-ellipsis-vertical me-3"></i></a>
+                        <button href="#"><i class="fa-solid fa-circle-notch me-3"></i></button>
+                        <button href="#"><i class="fa-solid fa-message me-3"></i></button>
+                        <button href="#"><i class="fa-solid fa-ellipsis-vertical me-3"></i></button>
                       </div>
                     </div>
                   </section>
@@ -100,13 +100,29 @@
 
                   <!-- SECTION : Contact chats -->
                   <section id="contact-chats" class="flex-grow-1">
+                    <div class="w-100">
+                      <div id="insert-new-chat" v-if="!dropInputNewContact">
+                        <button role="button" class="btn btn-success m-2" @click="createNewContact">
+                          <i class="fa-solid fa-plus"></i>
+                          Aggiungi una nuova chat
+                        </button>
+                      </div>
+                      <div v-else class="m-2">
+                        <input @keyup.enter="addNewContact" type="text" class="form-control mb-2" v-model="newContact" placeholder="Inserisci il suo nome" />
+                        <button role="button" class="btn btn-success" @click="addNewContact">
+                          <i class="fa-solid fa-plus"></i>
+                          Aggiungi contatto
+                        </button>
+                      </div>
+                    </div>
                     <div v-for="(contact,index) in filteredContacts" class="chat-contact p-2" @click="changeChat(index)" :class="{'active-chat': currentActiveIndex === index}">
                       <figure class="m-0">
                         <img :src="buildSrc(contact.avatar)" :alt="'img/avatar' + contact.avatar" class="rounded-circle" />
                       </figure>
                       <div class="contact-info ms-2">
                         <p class="mb-1">{{contact.name}}</p>
-                        <p class="m-0 chat-date">{{ contact.messages[contact.messages.length - 1].date}}</p>
+                        <!-- <p v-if="contact.messages.length" class="m-0 chat-date">{{ contact.messages[contact.messages.length - 1].date}}</p>
+                        <p v-else class="m-0 chat-date"></p> -->
                       </div>
                     </div>
                   </section>

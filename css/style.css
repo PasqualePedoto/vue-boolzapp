@@ -14,6 +14,11 @@ section {
   padding: 0;
 }
 
+button {
+  border: 0;
+  background-color: transparent;
+  padding: 0;
+}
 /* UTILS */
 
 .my-border {
@@ -369,4 +374,9 @@ Design del messaggio generico
 
 .emoji-area > div:hover {
   border-color: gray;
+}
+
+#chat-contact .insert-new-chat {
+  width: 100%;
+  min-height: 50px;
 }
