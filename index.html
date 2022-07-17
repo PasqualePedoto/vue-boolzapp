@@ -40,8 +40,6 @@
 
     <!-- Local -->
     <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/locale/it.js"></script>
-
-    <title>Document</title>
   </head>
 
   <body>
@@ -66,9 +64,9 @@
                         <span class="h6 m-0">{{user.name}}</span>
                       </div>
                       <div id="set-icon-chat-header" class="d-flex align-items-center">
-                        <button href="#"><i class="fa-solid fa-circle-notch me-3"></i></button>
-                        <button href="#"><i class="fa-solid fa-message me-3"></i></button>
-                        <button href="#"><i class="fa-solid fa-ellipsis-vertical me-3"></i></button>
+                        <button><i class="fa-solid fa-circle-notch me-3"></i></button>
+                        <button><i class="fa-solid fa-message me-3"></i></button>
+                        <button><i class="fa-solid fa-ellipsis-vertical me-3"></i></button>
                       </div>
                     </div>
                   </section>
@@ -81,8 +79,8 @@
                       </figure>
                       <div class="ms-2">
                         <p class="mb-1">Ricevi notifiche di nuovi messaggi</p>
-                        <button @click="removeNotificationRequest">
-                          <p class="m-0 text-decoration-underline">Attiva notifiche Desktop</p>
+                        <button @click="removeNotificationRequest" class="m-0 text-decoration-underline=">
+                          Attiva notifiche Desktop
                         </button>
                       </div>
                     </div>
