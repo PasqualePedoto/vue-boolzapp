@@ -119,7 +119,14 @@
                       </figure>
                       <div class="contact-info ms-2">
                         <p class="mb-1">{{contact.name}}</p>
-                        <div v-if="contact.messages.length !== 0" class="m-0 chat-date">{{ contact.messages[contact.messages.length - 1].date}}</div>
+                        <div v-if="contact.messages.length !== 0" class="m-0 chat-date">
+                          <div>
+                            {{ contact.messages[contact.messages.length - 1].text}}
+                          </div>
+                          <div>
+                            {{ contact.messages[contact.messages.length - 1].date}}
+                          </div>
+                        </div>
                         <div v-else class="chat-date m-0"></div>
                       </div>
                     </div>

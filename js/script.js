@@ -251,6 +251,7 @@ const boolzapp = new Vue({
       const index = this.currentActiveIndex;
       const chat = this.contacts[index].messages;
       chat.splice(i, 1);
+      console.log(chat.length);
     },
 
     // $ Funzione che ,al click del button nella sezione
@@ -278,17 +279,20 @@ const boolzapp = new Vue({
 
     // $ Aggiungiamo un nuovo contatto
     addNewContact() {
-      const contatto = {
-        name: this.newContact,
-        avatar: "_2",
-        visible: true,
-        messages: [{}],
-      };
+      if (this.newContact === "") return;
+      else {
+        const contatto = {
+          name: this.newContact,
+          avatar: "_2",
+          visible: true,
+          messages: [{}],
+        };
 
-      this.contacts.push(contatto);
+        this.contacts.push(contatto);
 
-      this.newContact = "";
-      this.dropInputNewContact = false;
+        this.newContact = "";
+        this.dropInputNewContact = false;
+      }
     },
   },
 
@@ -323,16 +327,3 @@ const boolzapp = new Vue({
     },
   },
 });
-
-// # DAYJS
-
-// dayjs.extend(dayjs_plugin_customParseFormat);
-// dayjs.locale("it");
-
-// const date = dayjs("2021-12-11 15:10:00").format("DD/MM/YYYY HH:mm:ss");
-// console.log(date);
-
-// dayjs.extend(dayjs_plugin_relativeTime);
-
-// const oldDate = dayjs("1996-11-04").fromNow();
-// console.log(oldDate);
