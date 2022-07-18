@@ -293,28 +293,21 @@ const boolzapp = new Vue({
         this.dropInputNewContact = false;
       }
     },
+    filteredContacts() {
+      this.contacts.forEach((contact) => {
+        const search = this.searchValue.toLowerCase();
+        const contatto = contact.name.toLowerCase();
+        if (contatto.includes(search)) {
+          contact.visible = true;
+        } else {
+          contact.visible = false;
+        }
+      });
+    },
   },
 
   // # Dati ottenuti in funzione dei data
   computed: {
-    // $ Filtriamo i contatti dei vari nella lista dei contatti
-    // $ in funzione del value del search input
-    filteredContacts() {
-      let filteredContacts = [];
-      if (this.searchValue === "") {
-        filteredContacts = this.contacts.map((contact) => {
-          return contact;
-        });
-      } else {
-        filteredContacts = this.contacts.filter((contact) => {
-          const search = this.searchValue.toLowerCase();
-          const contatto = contact.name.toLowerCase();
-          return contatto.includes(search);
-        });
-      }
-      return filteredContacts;
-    },
-
     // $ Eliminare le doppie apici delle emoji
     clearedEmojis() {
       let clearedEmojis = this.emojis.map((emoji, index) => {

@@ -92,7 +92,7 @@
                       <button class="border-0 p-2" id="chat-spotlight">
                         <i class="fa-solid fa-magnifying-glass"></i>
                       </button>
-                      <input type="text" class="form-control p-2 border-0" id="input-chat" v-model.trim="searchValue" placeholder="Cerca una chat" />
+                      <input type="text" class="form-control p-2 border-0" id="input-chat" v-model.trim="searchValue" placeholder="Cerca una chat" @keyup="filteredContacts"/>
                     </nav>
                   </section>
 
@@ -113,7 +113,7 @@
                         </button>
                       </div>
                     </div>
-                    <div v-for="(contact,index) in filteredContacts" class="chat-contact p-2" @click="changeChat(index)" :class="{'active-chat': currentActiveIndex === index}">
+                    <div v-for="(contact,index) in contacts" v-show="contact.visible" class="chat-contact p-2" @click="changeChat(index)" :class="{'active-chat': currentActiveIndex === index}">
                       <figure class="m-0">
                         <img :src="buildSrc(contact.avatar)" :alt="'img/avatar' + contact.avatar" class="rounded-circle" />
                       </figure>
