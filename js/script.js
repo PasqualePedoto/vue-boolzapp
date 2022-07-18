@@ -284,7 +284,7 @@ const boolzapp = new Vue({
           name: this.newContact,
           avatar: "_2",
           visible: true,
-          messages: [{}],
+          messages: [],
         };
 
         this.contacts.push(contatto);

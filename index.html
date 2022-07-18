@@ -106,7 +106,7 @@
                         </button>
                       </div>
                       <div v-else class="m-2">
-                        <input @keyup.enter="addNewContact" type="text" class="form-control mb-2" v-model="newContact" placeholder="Inserisci il suo nome" />
+                        <input @keyup.enter="addNewContact" type="text" class="form-control mb-2" v-model.trim="newContact" placeholder="Inserisci il suo nome" />
                         <button role="button" class="btn btn-success" @click="addNewContact">
                           <i class="fa-solid fa-plus"></i>
                           Aggiungi contatto
