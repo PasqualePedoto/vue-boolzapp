@@ -251,7 +251,6 @@ const boolzapp = new Vue({
       const index = this.currentActiveIndex;
       const chat = this.contacts[index].messages;
       chat.splice(i, 1);
-      console.log(chat.length);
     },
 
     // $ Funzione che ,al click del button nella sezione

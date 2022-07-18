@@ -92,7 +92,7 @@
                       <button class="border-0 p-2" id="chat-spotlight">
                         <i class="fa-solid fa-magnifying-glass"></i>
                       </button>
-                      <input type="text" class="form-control p-2 border-0" id="input-chat" v-model="searchValue" placeholder="Cerca una chat" />
+                      <input type="text" class="form-control p-2 border-0" id="input-chat" v-model.trim="searchValue" placeholder="Cerca una chat" />
                     </nav>
                   </section>
 
@@ -149,7 +149,7 @@
                       <p v-if="isWritingContact">sta scrivendo...</p>
                       <p v-else class="m-0">
                         <p v-if="contact.messages.length !== 0">
-                          ultimo accesso effettuato alle {{contact.date}}
+                          ultimo accesso effettuato alle {{contact.messages[contact.messages.length - 1].date}}
                         </p>
                         <p v-else></p>
                       </p>
@@ -208,7 +208,7 @@
                         </div>
                       </div>
                     </div>
-                    <input type="text" class="form-control" placeholder="Scrivi un messaggio" @keyup.enter="sendNewMessage" v-model="newMessage" />
+                    <input type="text" class="form-control" placeholder="Scrivi un messaggio" @keyup.enter="sendNewMessage" v-model.trim="newMessage" />
                     <div>
                       <button v-if="newMessage === ''" class="btn border-0 text-muted" role="button">
                         <i class="fa-solid fa-microphone"></i>
